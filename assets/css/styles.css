@@ -11,11 +11,11 @@ body {
 
 /* Font sizes */
 h1 {
-  font-size: 3.5rem;
+  font-size: 4.5rem;
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
 }
 
 h3 {
@@ -160,10 +160,29 @@ header {
 /* Body */
 .hero {
   background-image: url(../images/hero.jpg);
-  height: 100vh;
+  height: 120vh;
   background-size: cover;
   background-position: center;
   display: flow-root;
+  position: relative;
+  overflow: hidden;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
+
+  h1 {
+    position: absolute;
+    color: var(--white-theme);
+    bottom: 10%;
+    left: 10%;
+    margin: 0;
+    line-height: 1;
+    filter: drop-shadow(4px 5px 0.5px rgba(0, 0, 0, 0.5));
+  }
+
+  h3 {
+    margin: 0;
+    filter: drop-shadow(1px 2px 0.5px rgba(0, 0, 0, 0.5));
+  }
+
 }
 
 .text-emphasis {
