@@ -1,5 +1,5 @@
 :root {
-  font-family: "Karla", sans-serif;
+  font-family: "Nunito", sans-serif;
   --purple-theme: #7c4797;
   --orange-theme: #eda251;
   --white-theme: #f7f2f7;
@@ -12,17 +12,14 @@ body {
 /* Font sizes */
 h1 {
   font-size: 3.5rem;
-  font-weight: bold;
 }
 
 h2 {
   font-size: 2.5rem;
-  font-weight: bold;
 }
 
 h3 {
   font-size: 2rem;
-  font-weight: bold;
 }
 
 p {
@@ -38,6 +35,10 @@ a {
 header {
   background: url(../images/header.jpg);
   background-size: cover;
+}
+
+.logo img {
+  width: 250px;
 }
 
 .header-drop-shadow {
@@ -68,7 +69,7 @@ header {
   svg:active {
     fill: var(--orange-theme);
     transform: scale(0.9);
-    transition: transform 0.3s ease;
+    transition: transform 0.2s ease;
   }
 }
 
@@ -91,7 +92,6 @@ header {
   animation: rotateLeftRight 0.5s ease;
 }
 
-
 /* Navbar header */
 .navbar {
   ul {
@@ -101,27 +101,27 @@ header {
     display: flex;
     justify-content: center;
   }
-  
+
   li {
     position: relative;
   }
-  
+
   a {
     color: var(--white-theme);
     padding: 1.2em;
     display: block;
     font-weight: bold;
   }
-  
+
   .dropdown-content a {
     padding: 0.6em;
   }
-  
+
   .main-link:hover {
     transform: translateY(-3px);
     transition: transform 0.3s ease;
   }
-  
+
   .active {
     background: url(../images/dog-bone.svg);
     background-size: 100%;
@@ -129,7 +129,7 @@ header {
     background-position: center;
     filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
   }
-    
+
   .dropdown-content {
     background-color: var(--purple-theme);
     display: none;
@@ -137,22 +137,25 @@ header {
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
-    border-radius: 10px; 
+    border-radius: 10px;
     animation: slideDown 0.3s ease-out;
+
+    a {
+      transform: scale(0.95);
+    }
 
     a:hover {
       background-color: var(--orange-theme);
       border-radius: 10px;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      transform: scale(1);
     }
   }
-  
+
   .dropdown:hover .dropdown-content {
     display: block;
   }
-  
 }
-
 
 /* Body */
 .hero {
@@ -161,6 +164,10 @@ header {
   background-size: cover;
   background-position: center;
   display: flow-root;
+}
+
+.text-emphasis {
+  font-weight: bolder;
 }
 
 /* Animation */
