@@ -161,9 +161,9 @@ a {
 /* Body */
 .hero {
   background-image: url(../images/hero.jpg);
-  min-height: 100svh;
+  min-height: 1000px;
   background-size: cover;
-  background-position: center;
+  background-position: center 60%;
   display: flow-root;
   position: relative;
   filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
@@ -171,12 +171,11 @@ a {
   h1 {
     position: absolute;
     color: var(--white-theme);
-    top: 80%;
+    bottom: 10%;
     left: 5%;
     margin: 0;
     line-height: 1;
     filter: drop-shadow(4px 5px 0.5px rgba(0, 0, 0, 0.5));
-    max-width: 60%;
   }
 
   h3 {
