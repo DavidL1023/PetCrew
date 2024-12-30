@@ -1,8 +1,13 @@
 :root {
   font-family: "Nunito", sans-serif;
   --purple-theme: #7c4797;
+  --purple-rgb: 124, 71, 151;
+
   --orange-theme: #eda251;
+  --orange-rgb: 237, 162, 81; 
+
   --white-theme: #f7f2f7;
+  --white-rgb: 247, 242, 247;
 }
 
 body {
@@ -60,16 +65,15 @@ a {
   svg {
     width: 38px;
     fill: white;
+    transition: transform 0.3s ease;
   }
   svg:hover {
     fill: var(--orange-theme);
     transform: scale(1.1);
-    transition: transform 0.3s ease;
   }
   svg:active {
     fill: var(--orange-theme);
     transform: scale(0.9);
-    transition: transform 0.2s ease;
   }
 }
 
@@ -114,9 +118,12 @@ a {
     padding: 0.6em;
   }
 
+  .main-link {
+    transition: transform 0.3s ease;
+  }
+  
   .main-link:hover {
     transform: translateY(-3px);
-    transition: transform 0.3s ease;
   }
 
   .active {
@@ -137,9 +144,13 @@ a {
     border-radius: 10px;
     animation: slideDown 0.3s ease-out;
 
+    a {
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      border-radius: 10px;
+    }
+
     a:hover {
       background-color: var(--orange-theme);
-      border-radius: 10px;
       transition: background-color 0.3s ease, transform 0.3s ease;
       transform: scale(1.03);
     }
@@ -161,7 +172,7 @@ a {
 /* Body */
 .hero {
   background-image: url(../images/hero.jpg);
-  min-height: 1000px;
+  min-height: 100vh;
   background-size: cover;
   background-position: center 60%;
   display: flow-root;
@@ -174,7 +185,7 @@ a {
     bottom: 10%;
     left: 5%;
     margin: 0;
-    line-height: 1;
+    max-width: 60%;
     filter: drop-shadow(4px 5px 0.5px rgba(0, 0, 0, 0.5));
   }
 
@@ -186,7 +197,6 @@ a {
 
 .text-emphasis {
   font-weight: bolder;
-  font-style: oblique;
 }
 
 /* Animation */
