@@ -31,3 +31,12 @@ img sizes in html
 accessibility aria
 important keyword heavy tag text
 padding is for containers, margin is for element seperation
+
+FAQ in footer
+Maps near footer
+
+example of thinking ahead:
+for my socials list of clickable links,
+you want BEM to consider it its own container,
+you want to make the icons within to responsively fill 1/4 of the container,
+then you want to control the size by changing the container size itself using a BEM modifier
