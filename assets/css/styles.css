@@ -4,7 +4,7 @@
   --purple-rgb: 124, 71, 151;
 
   --orange-theme: #eda251;
-  --orange-rgb: 237, 162, 81; 
+  --orange-rgb: 237, 162, 81;
 
   --white-theme: #f7f2f7;
   --white-rgb: 247, 242, 247;
@@ -36,14 +36,13 @@ a {
 .site-header {
   background: url(../images/header.jpg);
   background-size: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 10;
 }
 
 .site-header__logo-icon {
   width: 225px;
-}
-
-.drop-shadow {
-  filter: drop-shadow(2px 2px 2px var(--purple-theme));
 }
 
 .site-header__info {
@@ -87,6 +86,7 @@ a {
 }
 
 .site-header__phone-icon {
+  flex-shrink: 0;
   width: 1.5em;
   height: auto;
   margin-right: 0.2em;
@@ -113,97 +113,89 @@ a {
   font-weight: bold;
 }
 
-.site-header__navbar {
-  ul {
-    
-  }
+.site-header__submenu {
+  list-style-type: none;
+  background-color: var(--purple-theme);
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 10px;
+  animation: slideDown 0.3s ease-out;
+  padding: 0;
+}
 
-  li {
-  }
+.site-header__submenu-link {
+  padding: 0.6em;
+  color: var(--white-theme);
+  display: block;
+  font-weight: bold;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+  border-radius: 10px;
 
-  a {
-    
+  &:hover {
+    background-color: var(--orange-theme);
+    transition:
+      background-color 0.3s ease,
+      transform 0.3s ease;
+    transform: scale(1.03);
   }
+}
 
-  .dropdown-content a {
-    padding: 0.6em;
-  }
+.site-header__menu-link {
+  transition: transform 0.3s ease;
 
-  .main-link {
-    transition: transform 0.3s ease;
-  }
-  
-  .main-link:hover {
+  &:hover {
     transform: translateY(-3px);
   }
+}
 
-  .active {
-    background: url(../images/dog-bone.svg);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
-  }
-
-  .dropdown-content {
-    background-color: var(--purple-theme);
-    display: none;
-    position: absolute;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    border-radius: 10px;
-    animation: slideDown 0.3s ease-out;
-
-    a {
-      transition: background-color 0.3s ease, transform 0.3s ease;
-      border-radius: 10px;
-    }
-
-    a:hover {
-      background-color: var(--orange-theme);
-      transition: background-color 0.3s ease, transform 0.3s ease;
-      transform: scale(1.03);
-    }
-  }
-
-  .li-dropdown:hover .dropdown-content {
+.site-header__menu-item {
+  &:hover .site-header__submenu {
     display: block;
   }
 
-  .li-dropdown > a::after {
-    position: absolute;
-    content: "▾";
-    margin-left: 0.2em;
-    top: 1.15em;
+  &:has(.site-header__submenu) {
+    .site-header__menu-link::after {
+      position: absolute;
+      content: "▾";
+      margin-left: 0.2em;
+      top: 1.15em;
+    }
   }
-    
+}
+
+.site-header__menu-link--active {
+  background: url(../images/dog-bone.svg) no-repeat center;
+  background-size: 100%;
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
 }
 
 /* Body */
-.hero {
+.row-hero {
   background-image: url(../images/hero.jpg);
   min-height: 100vh;
   background-size: cover;
   background-position: center 60%;
   display: flow-root;
   position: relative;
-  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
+}
 
-  h1 {
-    position: absolute;
-    color: var(--white-theme);
-    bottom: 10%;
-    left: 5%;
-    margin: 0;
-    max-width: 60%;
-    filter: drop-shadow(4px 5px 0.5px rgba(0, 0, 0, 0.5));
-  }
+.row-hero__grabber {
+  position: absolute;
+  color: var(--white-theme);
+  bottom: 10%;
+  left: 5%;
+  margin: 0;
+  max-width: 60%;
+  filter: drop-shadow(4px 5px 1px rgba(0, 0, 0, 0.5));
+}
 
-  h3 {
-    margin: 0;
-    filter: drop-shadow(1px 2px 0.5px rgba(0, 0, 0, 0.5));
-  }
+.row-hero__tag {
+  margin: 0;
 }
 
 .text-emphasis {

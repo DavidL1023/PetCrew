@@ -1,5 +1,5 @@
 {
-  "name": "petcrewremake1",
+  "name": "petcrew",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -13,5 +13,8 @@
     "@eslint/js": "^9.15.0",
     "eslint": "^9.15.0",
     "globals": "^15.12.0"
+  },
+  "dependencies": {
+    "prettier": "^3.4.2"
   }
 }
