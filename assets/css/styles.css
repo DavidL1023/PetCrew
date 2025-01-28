@@ -7,10 +7,6 @@
   --white-theme: #f2f2f2;
 }
 
-body {
-  background-color: var(--white-theme);
-}
-
 /* Font sizes */
 h1 {
   font-size: 4.5rem;
@@ -32,9 +28,47 @@ a {
 /* Utility */
 .text-emphasis {
   font-weight: bolder;
+  font-style: italic;
+  color: var(--orange-theme);
+}
+
+/* Button */
+.link-container {
+  display: flex;
+  gap: 0.8vw;
+}
+
+.link-container__link {
+  padding: 0.5em;
+  color: var(--white-theme);
+  font-weight: bold;
+  border-radius: 10px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+    z-index: 10;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.link-container__link--purple {
+  background-color: var(--purple-theme);
+}
+
+.link-container__link--orange {
+  background-color: var(--orange-theme);
 }
 
 /* Header */
+.site-header * {
+  color: var(--white-theme);
+}
+
 .site-header {
   background: url(../images/header.jpg);
   background-size: cover;
@@ -75,7 +109,6 @@ a {
 
 .site-header__phone-link {
   font-weight: 600;
-  color: var(--white-theme);
   font-size: 1.2rem;
   display: flex;
   align-items: center;
@@ -104,7 +137,6 @@ a {
 }
 
 .site-header__menu-link {
-  color: var(--white-theme);
   padding: 1rem;
   font-size: 1.1rem;
   display: block;
@@ -132,7 +164,6 @@ a {
 .site-header__submenu-link {
   font-size: 1.1rem;
   padding: 0.6em;
-  color: var(--white-theme);
   display: block;
   font-weight: bold;
   transition:
@@ -173,26 +204,37 @@ a {
 }
 
 /* Body */
+body {
+  background-color: var(--white-theme);
+}
+
 .row-hero {
   min-height: 90dvh;
   position: relative;
-  background: url(../images/dog-hero.webp) no-repeat center;
+  background: url(../images/dog-hero.jpg) no-repeat center;
   background-size: cover;
-  padding: 5em;
+  padding: 8em;
   box-sizing: border-box;
+  color: var(--white-theme);
+}
+
+.row-hero__stars {
+  width: 100px;
+  height: auto;
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
 }
 
 .row-hero__title {
-  color: var(--white-theme);
   filter: drop-shadow(4px 5px 1px rgba(0, 0, 0, 0.5));
   margin: 0;
-  max-width: 20ch;
+  max-width: 18ch;
 }
 
 .row-hero__subtitle {
-  color: var(--white-theme);
   filter: drop-shadow(4px 5px 1px rgba(0, 0, 0, 0.5));
   font-style: italic;
+  margin-top: 0.7em;
+  margin-bottom: 0.5em;
 }
 
 /* Animation */
