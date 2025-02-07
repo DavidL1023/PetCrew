@@ -4,7 +4,13 @@
 
   --orange-theme: #eda251;
 
-  --white-theme: #f2f2f2;
+  --white-theme: #f4f4f4;
+
+  --off-section-theme: #f3ede3;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 /* Font sizes */
@@ -13,16 +19,26 @@ h1 {
 }
 
 h2 {
-  font-size: 3.5rem;
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2.5rem;
 }
 
 p {
   font-size: 1.5rem;
+  font-weight: 500;
 }
 
 a {
   font-size: 1.5rem;
   text-decoration: none;
+}
+
+header a {
+  font-size: 1.1rem;
+  font-weight: bold;
 }
 
 /* Utility */
@@ -35,7 +51,7 @@ a {
 /* Button */
 .link-container {
   display: flex;
-  gap: 0.8vw;
+  gap: 0.6rem;
 }
 
 .link-container__link {
@@ -47,7 +63,7 @@ a {
   transition: transform 0.3s ease;
 
   &:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     z-index: 10;
   }
 
@@ -70,9 +86,10 @@ a {
 }
 
 .site-header {
-  background: url(../images/header.jpg);
+  background: url(../images/paw-print.jpg);
   background-size: cover;
   padding-top: 10px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
 .site-header__logo-icon {
@@ -88,7 +105,7 @@ a {
 
 .socials {
   display: flex;
-  gap: 0.5vw;
+  gap: 0.5rem;
 }
 
 .socials__icon {
@@ -108,8 +125,6 @@ a {
 }
 
 .site-header__phone-link {
-  font-weight: 600;
-  font-size: 1.2rem;
   display: flex;
   align-items: center;
 
@@ -129,16 +144,15 @@ a {
 /* Navbar header */
 .site-header__menu {
   display: flex;
-  gap: 0.5vw;
+  gap: 0.5rem;
   list-style-type: none;
-  padding: 0;
-  margin: 0;
   justify-content: center;
+  margin: 0;
+  padding-inline-start: 0;
 }
 
 .site-header__menu-link {
-  padding: 1rem;
-  font-size: 1.1rem;
+  padding: 0.7em 1em 0.8em 1em;
   display: block;
   font-weight: bold;
   transition: transform 0.3s ease;
@@ -156,13 +170,12 @@ a {
   min-width: 160px;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   z-index: 1;
+  padding: 0;
   border-radius: 10px;
   animation: slideDown 0.3s ease-out;
-  padding: 0;
 }
 
 .site-header__submenu-link {
-  font-size: 1.1rem;
   padding: 0.6em;
   display: block;
   font-weight: bold;
@@ -209,13 +222,33 @@ body {
 }
 
 .row-hero {
-  min-height: 90dvh;
-  position: relative;
+  min-height: 100svh;
   background: url(../images/dog-hero.jpg) no-repeat center;
   background-size: cover;
-  padding: 8em;
-  box-sizing: border-box;
+  padding: 10%;
   color: var(--white-theme);
+  position: relative;
+}
+
+.row-hero::before {
+  /* https://wavier.art/ */
+  content: "";
+  width: 100%;
+  height: 15px;
+  position: absolute;
+  bottom: -0.3%;
+  left: 0;
+  background-size: auto;
+  background-repeat: repeat no-repeat;
+  background-position: 20vw bottom;
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1200  80' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M0 59L50 55C100 51 200 44 300 30C400 15 500 -6 600 1C700 8 800 44 900 59C1000 73 1100 66 1150 62L1200 59V80H1150C1100 80 1000 80 900 80C800 80 700 80 600 80C500 80 400 80 300 80C200 80 100 80 50 80H0V59Z' fill='%23f2f2f2'/></svg>");
+}
+
+@media (max-width: 850px) {
+  /* https://wavier.art/ */
+  .wave-container::before {
+    height: 7.5px;
+  }
 }
 
 .row-hero__stars {
@@ -225,16 +258,76 @@ body {
 }
 
 .row-hero__title {
-  filter: drop-shadow(4px 5px 1px rgba(0, 0, 0, 0.5));
+  text-shadow: 3px 5px 3px #00000080;
   margin: 0;
-  max-width: 18ch;
+  max-width: 38rem;
+  line-height: 1;
 }
 
 .row-hero__subtitle {
-  filter: drop-shadow(4px 5px 1px rgba(0, 0, 0, 0.5));
-  font-style: italic;
-  margin-top: 0.7em;
-  margin-bottom: 0.5em;
+  text-shadow: 3px 5px 3px #00000080;
+  margin: 0.5em 0;
+}
+
+.content-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  &:nth-child(odd) {
+    background-color: var(--off-section-theme);
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.1);  }
+}
+
+.content-row--horizontal {
+  flex-direction: row;
+  align-items: stretch;
+  flex-wrap: wrap;
+  text-align: left;
+  gap: 1rem;
+}
+
+.content-row__title {
+  max-width: 40rem;
+  line-height: 1;
+}
+
+.content-row__body {
+  max-width: 60rem;
+}
+
+.content-card {
+  text-align: left;
+  background-color: var(--purple-theme);
+  color: var(--white-theme);
+  border-radius: 10px;
+  padding: 2rem;
+  max-width: 40rem;
+  border-top: 15px groove var(--orange-theme);
+
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.content-card:nth-child(odd):hover {
+  transform: rotate(-1.5deg);
+}
+
+.content-card:nth-child(even):hover {
+  transform: rotate(1.5deg);
+}
+
+/* Footer */
+.site-footer {
+  min-height: 20rem;
+  background-size: cover;
+  background: url(../images/paw-print.jpg);
+  border-top: 20px groove var(--orange-theme);
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+
+  /* grid */
 }
 
 /* Animation */
