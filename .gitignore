@@ -1,9 +1,6 @@
 # IntelliJ IDEA
 .idea/
 
-# Generated site
-public/
-
 # Logs
 logs
 *.log
