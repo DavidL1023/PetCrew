@@ -317,7 +317,7 @@ body {
   color: var(--white-theme);
   border-radius: 20px;
   padding: 4rem 16px;
-  border-top: 20px groove var(--orange-theme);
+  border-top: 15px groove var(--orange-theme);
   box-shadow: -8px 0 0 #5a3470;
   transition: transform 0.3s ease-out;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
@@ -345,12 +345,10 @@ body {
 }
 
 .content-card__icon {
-  width: 1em;
-  height: 1em;
-  margin-top: 4px;
+  width: 1.2em;
+  height: 1.2em;
   border-radius: 50%;
   flex-shrink: 0;
-  object-fit: contain;
 }
 
 .content-row__title {
@@ -369,6 +367,40 @@ body {
   height: auto;
   object-fit: cover;
   mix-blend-mode: multiply;
+}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto, 1fr, 1fr, auto;
+  gap: 1rem;
+}
+
+.services__header {
+  margin: 0;
+}
+
+.services__header--services {
+  grid-row: 1;
+  grid-column: span 3;
+}
+
+.services__header--shop {
+  grid-row: 3;
+  grid-column: span 3;
+}
+
+.services__card {
+  width: 250px;
+  min-height: 350px;
+  background-color: var(--orange-theme);
+  border-top: 15px groove var(--purple-theme);
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+  }
 }
 
 /* Footer */

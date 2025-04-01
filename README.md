@@ -9,3 +9,5 @@ structured data for rich snippets
 add emphasis to current day of the week for footer, add current year for footer copyright
 
 detach header nav to be sticky
+
+parallax background for little transparent puppy related icons
