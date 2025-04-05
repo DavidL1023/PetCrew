@@ -17,9 +17,23 @@
       href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Favicon -->
     <link rel="icon" href="assets/icons/favicon-32x32.png" />
   </head>
+
+  <!-- TODO: Legal requirements for site -->
+  <!-- TODO: Add accessible ARIA roles and attributes for menus that need to be opened -->
+  <!-- TODO: Implement OG tags for social media sharing -->
+  <!-- TODO: Add structured data for rich snippets (e.g., JSON-LD for business details) -->
+  <!-- TODO: Highlight the current day of the week in the footer's business hours -->
+  <!-- TODO: Auto update the footer copyright with the current year -->
+  <!-- TODO: Make the header navigation sticky for better usability -->
+  <!-- TODO: Add a parallax background effect with transparent puppy-related icons -->
 
   <body>
     <header class="site-header">
@@ -239,23 +253,78 @@
           well-being.
         </p>
         <div class="services">
-          <h2 class="services__header services__header--services">Services</h2>
-          <div class="services__card services__card--groom"></div>
-          <div class="services__card services__card--daycare"></div>
-          <div class="services__card services__card--party"></div>
-          <h2 class="services__header services__header--shop">Shop</h2>
-          <div class="services__card services__card--puppies"></div>
-          <div class="services__card services__card--supplies"></div>
+          <h3 class="services__header services__header--services">Services</h3>
+          <div class="services__card services__card--groom">
+            <h3 class="services__title">Pet Grooming</h3>
+            <img
+              class="services__icon"
+              src="assets/images/dog-grooming.png"
+              width="256"
+              height="256"
+              alt="Grooming Service"
+            />
+          </div>
+          <div class="services__card services__card--daycare">
+            <h3 class="services__title">Doggy Daycare</h3>
+            <img
+              class="services__icon"
+              src="assets/images/daycare.png"
+              width="256"
+              height="256"
+              alt="Daycare Service"
+            />
+          </div>
+          <div class="services__card services__card--party">
+            <h3 class="services__title">Party Service</h3>
+            <img
+              class="services__icon"
+              src="assets/images/party.png"
+              width="256"
+              height="256"
+              alt="Party Service"
+            />
+          </div>
+          <h3 class="services__header services__header--shop">Shop</h3>
+          <div class="services__card services__card--puppies">
+            <h3 class="services__title">Puppies for Sale</h3>
+            <img
+              class="services__icon"
+              src="assets/images/adopt.png"
+              width="256"
+              height="256"
+              alt="Puppies for Sale"
+            />
+          </div>
+          <div class="services__card services__card--accessory">
+            <h3 class="services__title">Accessories for Sale</h3>
+            <img
+              class="services__icon"
+              src="assets/images/collar.png"
+              width="256"
+              height="256"
+              alt="Accessories"
+            />
+          </div>
+          <div class="services__card services__card--food">
+            <h3 class="services__title">Pet Food for Sale</h3>
+            <img
+              class="services__icon"
+              src="assets/images/food.png"
+              width="256"
+              height="256"
+              alt="Pet Food"
+            />
+          </div>
         </div>
       </section>
 
       <article class="content-row">
         <h2 class="content-row__title">Our Story</h2>
         <p class="content-row__body">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima cumque
-          libero similique natus ullam officia repellat, rerum, in amet eius
-          praesentium! Sit dignissimos ipsa libero cumque officia nemo facere
-          eveniet?
+          After seeing the challenges the pet shop faced under previous
+          ownership, the current owner saw an opportunity to make a positive
+          change. They purchased the shop with a vision of creating a nurturing
+          environment where every pet receives proper attention, following best practice.
         </p>
         <div class="carousel">
           <!--TODO do image carousel-->
@@ -277,10 +346,9 @@
           </h3>
           <p class="content-card__body">
             Pet Crew is dedicated to providing exceptional pet care in a
-            welcoming environment for both pets and owners. Whether you're here
-            for grooming, adopting a puppy, or shopping for pet supplies, you'll
-            receive expert advice and top-quality products. Your satisfaction
-            and your pet's well-being are our priorities.
+            welcoming environment for both pets and owners. You'll receive
+            expert advice and top-quality products. Your satisfaction and your
+            pet's well-being are our priorities.
           </p>
         </div>
 
@@ -333,31 +401,20 @@
             Message us!</a
           >
         </div>
+      </section>
+      <div class="dog-row">
         <img
-          class="content-row__dog-row"
+          class="dog-row__image"
           src="assets/images/animal-row.jpg"
           height="1452"
           width="8398"
-          alt="Dogs side by side"
         />
-      </section>
+      </div>
     </main>
 
     <footer class="site-footer">
       <!-- Footer content -->
       <div class="site-footer__grid">
-        <div class="site-footer__main site-footer__columns">
-          <img
-            class="site-footer__logo"
-            src="assets/icons/petCrewLogo.svg"
-            height="81"
-            width="284"
-            alt="petcrew"
-          />
-          <div><a class="site-footer__link" href="">Contact Us</a></div>
-          <div><a class="site-footer__link" href="">Services</a></div>
-          <div><a class="site-footer__link" href="">FAQ</a></div>
-        </div>
         <div class="site-footer__location site-footer__columns">
           <div class="site-footer__columns--no-border">
             <p class="site-footer__title">Where to Find Us</p>
@@ -484,6 +541,18 @@
               </svg>
             </a>
           </div>
+        </div>
+        <div class="site-footer__main site-footer__columns">
+          <img
+            class="site-footer__logo"
+            src="assets/icons/petCrewLogo.svg"
+            height="81"
+            width="284"
+            alt="petcrew"
+          />
+          <div><a class="site-footer__link" href="">Contact Us</a></div>
+          <div><a class="site-footer__link" href="">Services</a></div>
+          <div><a class="site-footer__link" href="">FAQ</a></div>
         </div>
         <div class="site-footer__hours site-footer__columns">
           <div class="site-footer__columns--no-border">
