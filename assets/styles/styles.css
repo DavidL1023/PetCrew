@@ -1,6 +1,6 @@
 :root {
   font-family: "Nunito", sans-serif;
-  
+
   --purple-theme: #7c4797;
 
   --orange-theme: #eda251;
@@ -242,28 +242,6 @@ body {
   background-size: cover;
   padding: 10%;
   color: var(--white-theme);
-  position: relative;
-}
-
-.row-hero::before {
-  /* https://wavier.art/ */
-  content: "";
-  width: 100%;
-  height: 15px;
-  position: absolute;
-  bottom: -0.3%;
-  left: 0;
-  background-size: auto;
-  background-repeat: repeat no-repeat;
-  background-position: 20vw bottom;
-  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1200  80' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M0 59L50 55C100 51 200 44 300 30C400 15 500 -6 600 1C700 8 800 44 900 59C1000 73 1100 66 1150 62L1200 59V80H1150C1100 80 1000 80 900 80C800 80 700 80 600 80C500 80 400 80 300 80C200 80 100 80 50 80H0V59Z' fill='%23f2f2f2'/></svg>");
-}
-
-@media (max-width: 850px) {
-  /* https://wavier.art/ */
-  .wave-container::before {
-    height: 7.5px;
-  }
 }
 
 .row-hero__stars {
@@ -303,6 +281,7 @@ body {
   flex-direction: row;
   align-items: stretch;
   flex-wrap: wrap;
+  padding-block: 12rem;
   gap: 2rem;
 }
 
@@ -314,7 +293,7 @@ body {
   background-color: var(--purple-theme);
   color: var(--white-theme);
   border-radius: 20px;
-  padding: 4rem 2rem;
+  padding: 4.5rem 2rem;
   border-top: 15px groove var(--orange-theme);
   box-shadow: -8px 0 0 #5a3470;
   transition: transform 0.3s ease-out;
@@ -416,11 +395,12 @@ body {
   border-top: 15px groove var(--purple-theme);
   box-shadow: -8px 0 0 #a57138;
   border-radius: 20px;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
   position: relative;
 
   &:hover {
-    transform: translateY(-6px);
+    background-color: #f9b062;
+    transform: scale(1.01);
   }
 }
 
@@ -442,11 +422,92 @@ body {
   z-index: 1;
 }
 
+.parallax-bg {
+  /* TODO see if a little blur on just the background looks nice */
+  background-image: url(../images/parallax.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+.edge-design-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.edge-design-container__design {
+  background-image: url(../images/treat-bg.png);
+  background-size: contain;
+  mix-blend-mode: multiply;
+  flex: 0 1 20%;
+  min-width: 0;
+}
+
+.edge-design-container__design--flipped {
+  transform: scaleX(-1);
+}
+
+.edge-design-container__center {
+  flex: 1 0 auto;
+  min-width: 0;
+}
+
+.wave-container {
+  /* https://wavier.art */
+  position: relative;
+}
+
+.wave-container::before {   
+  content: "";
+  width: 100%;
+  height: 26px;
+  position: absolute;
+  bottom: -0.3%;
+  left: 0;
+  background-size: auto;
+  background-repeat: repeat no-repeat;
+  background-position: 29vw bottom;
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1200 80' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M0 1C19.5523 2 32.2291 3 51.5 5C104.5 11 200 25 300 39C400 53 500 66 600 61C700 55 800 31 900 18C987.526 3 1085.36 -1 1150 0C1169.54 -1 1180.49 0 1200 1V80H1150C1100 80 1000 80 900 80C800 80 700 80 600 80C500 80 400 80 300 80C200 80 100 80 50 80H0V1.98128Z' fill='%23f3ede3'/></svg>");
+}
+
+.wave-container--mirrored::after {
+  content: "";
+  width: 100%;
+  height: 26px;
+  position: absolute;
+  top: -0.3%;
+  left: 0;
+  transform: scaleY(-1);
+  background-size: auto;
+  background-repeat: repeat no-repeat;
+  background-position: 29vw bottom;
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1200 80' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M0 1C19.5523 2 32.2291 3 51.5 5C104.5 11 200 25 300 39C400 53 500 66 600 61C700 55 800 31 900 18C987.526 3 1085.36 -1 1150 0C1169.54 -1 1180.49 0 1200 1V80H1150C1100 80 1000 80 900 80C800 80 700 80 600 80C500 80 400 80 300 80C200 80 100 80 50 80H0V1.98128Z' fill='%23f3ede3'/></svg>");
+}
+
+.wave-container--white::before {   
+  content: "";
+  width: 100%;
+  height: 26px;
+  position: absolute;
+  bottom: -0.3%;
+  left: 0;
+  background-size: auto;
+  background-repeat: repeat no-repeat;
+  background-position: 29vw bottom;
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1200 80' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M0 1C19.5523 2 32.2291 3 51.5 5C104.5 11 200 25 300 39C400 53 500 66 600 61C700 55 800 31 900 18C987.526 3 1085.36 -1 1150 0C1169.54 -1 1180.49 0 1200 1V80H1150C1100 80 1000 80 900 80C800 80 700 80 600 80C500 80 400 80 300 80C200 80 100 80 50 80H0V1.98128Z' fill='%23f4f4f4'/></svg>");
+}
+
+@media(max-width:850px) {
+  .wave-container::before {
+    height: 13px
+  }
+}
+
 .carousel {
-  margin: 0 auto;
   display: flex;
   overflow: hidden;
-  padding-block: 26px;
+  padding-top: 1rem;
+  padding-bottom: 6rem;
   background-color: var(--alt-theme);
 }
 
@@ -461,10 +522,6 @@ body {
   animation: scrolling 40s linear infinite;
 }
 
-.carousel__group > *:hover {
-  transform: scale(1.05) rotate(1deg);
-}
-
 .carousel__card {
   width: 100%;
   color: white;
@@ -475,33 +532,53 @@ body {
   transition: transform 0.3s ease;
   outline: 6px dotted var(--white-theme-two);
 
+  &:nth-child(even) {
+    transform: rotate(2deg);
+  }
+
+  &:nth-child(odd) {
+    transform: rotate(-2deg);
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
   &:nth-child(1) {
     background-image: url(../images/groom-1.jpg);
     background-size: cover;
+    background-position: center;
   }
 
   &:nth-child(2) {
     background-image: url(../images/groom-2.jpg);
     background-size: cover;
+    background-position: center;
+
   }
 
   &:nth-child(3) {
     background-image: url(../images/groom-3.jpg);
     background-size: cover;
+    background-position: center;
   }
   &:nth-child(4) {
     background-image: url(../images/groom-4.jpg);
     background-size: cover;
+    background-position: center;
   }
 
   &:nth-child(5) {
     background-image: url(../images/groom-5.jpg);
     background-size: cover;
+    background-position: center;
+
   }
 
   &:nth-child(6) {
     background-image: url(../images/groom-6.jpg);
     background-size: cover;
+    background-position: center;
   }
 }
 

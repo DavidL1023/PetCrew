@@ -33,7 +33,6 @@
   <!-- TODO: Highlight the current day of the week in the footer's business hours -->
   <!-- TODO: Auto update the footer copyright with the current year -->
   <!-- TODO: Make the header navigation sticky for better usability -->
-  <!-- TODO: Add a parallax background effect with transparent puppy-related icons -->
 
   <body>
     <header class="site-header">
@@ -209,7 +208,7 @@
 
     <main>
       <!-- Main content -->
-      <section class="row-hero">
+      <section class="row-hero wave-container wave-container--white">
         <img
           class="row-hero__stars"
           src="assets/images/stars.png"
@@ -242,81 +241,87 @@
         </div>
       </section>
 
-      <section class="content-row">
-        <h2 class="content-row__title">Pet Shop & Salon in Newark, NJ</h2>
-        <p class="content-row__body">
-          We're delighted to be your go-to spot for all your pet needs and to
-          provide exceptional and personalized care for your furry friends. At
-          Pet Crew, we understand that your pets are not just animals but
-          cherished members of your family. That's why we strive to offer a wide
-          range of services and products to ensure their health, happiness, and
-          well-being.
-        </p>
-        <div class="services">
-          <h3 class="services__header services__header--services">Services</h3>
-          <div class="services__card services__card--groom">
-            <h3 class="services__title">Pet Grooming</h3>
-            <img
-              class="services__icon"
-              src="assets/images/dog-grooming.png"
-              width="256"
-              height="256"
-              alt="Grooming Service"
-            />
+      <div class="edge-design-container">
+        <div class="edge-design-container__design"></div>
+        <section class="content-row edge-design-container__center">
+          <h2 class="content-row__title">Pet Shop & Salon in Newark, NJ</h2>
+          <p class="content-row__body">
+            We're delighted to be your go-to spot for all your pet needs and to
+            provide exceptional and personalized care for your furry friends. At
+            Pet Crew, we understand that your pets are not just animals but
+            cherished members of your family. That's why we strive to offer a
+            wide range of services and products to ensure their health,
+            happiness, and well-being.
+          </p>
+          <div class="services">
+            <h3 class="services__header services__header--services">
+              Services
+            </h3>
+            <div class="services__card services__card--groom">
+              <h3 class="services__title">Pet Grooming</h3>
+              <img
+                class="services__icon"
+                src="assets/images/dog-grooming.png"
+                width="256"
+                height="256"
+                alt="Grooming Service"
+              />
+            </div>
+            <div class="services__card services__card--daycare">
+              <h3 class="services__title">Doggy Daycare</h3>
+              <img
+                class="services__icon"
+                src="assets/images/daycare.png"
+                width="256"
+                height="256"
+                alt="Daycare Service"
+              />
+            </div>
+            <div class="services__card services__card--party">
+              <h3 class="services__title">Party Service</h3>
+              <img
+                class="services__icon"
+                src="assets/images/party.png"
+                width="256"
+                height="256"
+                alt="Party Service"
+              />
+            </div>
+            <h3 class="services__header services__header--shop">Shop</h3>
+            <div class="services__card services__card--puppies">
+              <h3 class="services__title">Puppies for Sale</h3>
+              <img
+                class="services__icon"
+                src="assets/images/adopt.png"
+                width="256"
+                height="256"
+                alt="Puppies for Sale"
+              />
+            </div>
+            <div class="services__card services__card--accessory">
+              <h3 class="services__title">Accessories for Sale</h3>
+              <img
+                class="services__icon"
+                src="assets/images/collar.png"
+                width="256"
+                height="256"
+                alt="Accessories"
+              />
+            </div>
+            <div class="services__card services__card--food">
+              <h3 class="services__title">Pet Food for Sale</h3>
+              <img
+                class="services__icon"
+                src="assets/images/food.png"
+                width="256"
+                height="256"
+                alt="Pet Food"
+              />
+            </div>
           </div>
-          <div class="services__card services__card--daycare">
-            <h3 class="services__title">Doggy Daycare</h3>
-            <img
-              class="services__icon"
-              src="assets/images/daycare.png"
-              width="256"
-              height="256"
-              alt="Daycare Service"
-            />
-          </div>
-          <div class="services__card services__card--party">
-            <h3 class="services__title">Party Service</h3>
-            <img
-              class="services__icon"
-              src="assets/images/party.png"
-              width="256"
-              height="256"
-              alt="Party Service"
-            />
-          </div>
-          <h3 class="services__header services__header--shop">Shop</h3>
-          <div class="services__card services__card--puppies">
-            <h3 class="services__title">Puppies for Sale</h3>
-            <img
-              class="services__icon"
-              src="assets/images/adopt.png"
-              width="256"
-              height="256"
-              alt="Puppies for Sale"
-            />
-          </div>
-          <div class="services__card services__card--accessory">
-            <h3 class="services__title">Accessories for Sale</h3>
-            <img
-              class="services__icon"
-              src="assets/images/collar.png"
-              width="256"
-              height="256"
-              alt="Accessories"
-            />
-          </div>
-          <div class="services__card services__card--food">
-            <h3 class="services__title">Pet Food for Sale</h3>
-            <img
-              class="services__icon"
-              src="assets/images/food.png"
-              width="256"
-              height="256"
-              alt="Pet Food"
-            />
-          </div>
-        </div>
-      </section>
+        </section>
+        <div class="edge-design-container__design edge-design-container__design--flipped"></div>
+      </div>
 
       <article class="content-row content-row--alt-theme">
         <h2 class="content-row__title">Our Story</h2>
@@ -348,7 +353,9 @@
         </div>
       </div>
 
-      <section class="content-row content-row--horizontal">
+      <section
+        class="content-row content-row--horizontal parallax-bg wave-container wave-container--mirrored"
+      >
         <div class="content-card">
           <h3 class="content-card__title-icon">
             <img
